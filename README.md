@@ -8,15 +8,15 @@
  https://www.tensorflow.org/install/pip
  https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-723/install-guide/index.html
  
-### Create a new environment
+## Create a new environment
  
  python3 -m venv .env;
  
-### Activate the environment
+## Activate the environment
 
  source .env/bin/activate
  
-### Install
+## Install modules
 
  python3 -m pip install torch torchvision torchaudio;
  python3 -m pip install --upgrade setuptools pip;
@@ -38,10 +38,10 @@
 
  python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))";
 
- pip install tf-keras;
+ pip3 install tf-keras;
 
  ## Transformer 
- pip install transformers;
+ pip3 install transformers; 
  python3 -c "from transformers import pipeline; print(pipeline('sentiment-analysis')('we love you'))";
 
 
