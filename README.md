@@ -1,6 +1,8 @@
  # Install Transformers on Ubuntu 22.04 with CUDA
- 
- Just testing
+
+ Under develop!!!!!!!!!!!
+
+ GPU is NVIDIA GeForce 940MX
  
  ## Refrences
  
@@ -10,38 +12,50 @@
  
 ## Create a new environment
  
- python3 -m venv .env;
+    python3 -m venv .env;
  
 ## Activate the environment
 
- source .env/bin/activate
+    source .env/bin/activate
  
-## Install modules
+## Install modules using PyTorch 
 
- python3 -m pip install torch torchvision torchaudio;
- python3 -m pip install --upgrade setuptools pip;
- python3 -m pip install nvidia-pyindex;
- python3 -m pip install --upgrade nvidia-tensorrt;
+    python3 -m pip install --upgrade setuptools pip;
+    python3 -m pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+    python3 -m pip install nvidia-pyindex;
+    python3 -m pip install --upgrade nvidia-tensorrt;
+
+    pip3 install datasets;
+    pip3 install evaluate;
+    pip3 install tf-keras
+
+    pip3 install transformers[torch]
+    pip3 install accelerate
+    pip3 install tf-keras;
  
- sudo apt-get install python3-libnvinfer-dev;
+ ### Verify the installation of PyTorch
+
+ python -c "import torch; print(f'CUDA available? {torch.cuda.is_available()}'); print(f'GPU Name: {torch.cuda.get_device_name(0)}')";
+
+ python -c "from transformers import pipeline; print(pipeline('sentiment-analysis',device='cuda')('I love you'))";
+
+ python -c "from transformers import pipeline; print(pipeline('sentiment-analysis',device='cuda')('I love you'))";
+ python -c "from transformers import pipeline; summarizer = pipeline('sentiment-analysis',device='cuda'); outputs = summarizer('I love you'); print(outputs);"
  
+<p>print(outputs[0]["summary_text"])
+
+
+ ## Install modules using TensorFlow
+
+ pip3 install tensorflow[and-cuda];
  pip3 install https://storage.googleapis.com/tensorflow/versions/2.16.1/tensorflow-2.16.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl;
+ pip3 install https://storage.googleapis.com/tensorflow/versions/2.16.1/tensorflow_cpu-2.16.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl;
 
- pip3 install https://storage.googleapis.com/tensorflow/versions/2.16.1/tensorflow_cpu-2.16.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
- 
-
- pip3 install tensorflow[and-cuda]
- 
- Verify the installation:
-
+### Verify the installation of TensorFlow:
  python3 -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))";
-
  python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))";
 
- pip3 install tf-keras;
-
- ## Transformer 
- pip3 install transformers; 
- python3 -c "from transformers import pipeline; print(pipeline('sentiment-analysis')('we love you'))";
+ # General information
+ CUDA® is a parallel computing platform and programming model developed by NVIDIA for general computing on graphical processing units (GPUs). With CUDA, developers are able to dramatically speed up computing applications by harnessing the power of GPUs.
 
 
