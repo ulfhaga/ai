@@ -23,6 +23,9 @@ which significantly speeds up deep learning computations.
  
 ## Install modules using PyTorch 
 
+
+
+
     python3 -m pip install --upgrade setuptools pip;
     python3 -m pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
     python3 -m pip install nvidia-pyindex;
