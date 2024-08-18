@@ -2,14 +2,17 @@
 
  Under develop!!!!!!!!!!!
 
- GPU is NVIDIA GeForce 940MX
- 
- ## Refrences
- 
- https://huggingface.co
- https://www.tensorflow.org/install/pip
- https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-723/install-guide/index.html
- 
+## Prepare
+
+OS is Ubuntu 22.04. Important is to use Nvidia CUDA toolkit to run on GPU.
+
+[Installation](doc/thinkpad.md)
+
+We are using PyTorch. It is an open-source machine learning library. 
+PyTorch has built-in support for CUDA, NVIDIA's parallel computing platform, 
+allowing for easy and efficient execution of tensor operations on GPUs, 
+which significantly speeds up deep learning computations.
+
 ## Create a new environment
  
     python3 -m venv .env;
@@ -35,27 +38,30 @@
  
  ### Verify the installation of PyTorch
 
- python -c "import torch; print(f'CUDA available? {torch.cuda.is_available()}'); print(f'GPU Name: {torch.cuda.get_device_name(0)}')";
+    python -c "import torch; print(f'CUDA available? {torch.cuda.is_available()}'); print(f'GPU Name: {torch.cuda.get_device_name(0)}')";
 
- python -c "from transformers import pipeline; print(pipeline('sentiment-analysis',device='cuda')('I love you'))";
+    python -c "from transformers import pipeline; summarizer = pipeline('sentiment-analysis',device='cuda'); outputs = summarizer('I love you'); print(outputs);"  
 
- python -c "from transformers import pipeline; print(pipeline('sentiment-analysis',device='cuda')('I love you'))";
- python -c "from transformers import pipeline; summarizer = pipeline('sentiment-analysis',device='cuda'); outputs = summarizer('I love you'); print(outputs);"
+With the Linux command nvtop you can see the GPU status for NVIDIA GPUs.
+
+## Install modules using TensorFlow 
+
+ TensorFlow be used instead of PyTorch. I am not using that.  Wrote some instruction on the page [Install TensorFlow](doc/tensorflow.md)
+
+## Examples
+
+Will be found in folder Examples.
+
+## General information
  
-<p>print(outputs[0]["summary_text"])
-
-
- ## Install modules using TensorFlow
-
- pip3 install tensorflow[and-cuda];
- pip3 install https://storage.googleapis.com/tensorflow/versions/2.16.1/tensorflow-2.16.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl;
- pip3 install https://storage.googleapis.com/tensorflow/versions/2.16.1/tensorflow_cpu-2.16.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl;
-
-### Verify the installation of TensorFlow:
- python3 -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))";
- python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))";
-
- # General information
  CUDA® is a parallel computing platform and programming model developed by NVIDIA for general computing on graphical processing units (GPUs). With CUDA, developers are able to dramatically speed up computing applications by harnessing the power of GPUs.
 
+PyTorch is an open-source machine learning library primarily used for deep learning and artificial intelligence (AI) applications. Developed by Facebook's AI Research lab (FAIR) and released in 2016, PyTorch has quickly become one of the most popular frameworks for building and training neural networks. 
 
+## Refrences
+ 
+ https://huggingface.co
+ https://www.tensorflow.org/install/pip
+ https://docs.nvidia.com/deeplearning/tensorrt/archives/tensorrt-723/install-guide/index.html
+ https://developer.nvidia.com/cuda-toolkit
+ 
