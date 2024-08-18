@@ -1,7 +1,5 @@
  # Install Transformers on Ubuntu 22.04 with CUDA
 
- Under develop!!!!!!!!!!!
-
 ## Prepare
 
 OS is Ubuntu 22.04. Important is to use Nvidia CUDA toolkit to run on GPU.
@@ -22,9 +20,6 @@ which significantly speeds up deep learning computations.
     source .env/bin/activate
  
 ## Install modules using PyTorch 
-
-
-
 
     python3 -m pip install --upgrade setuptools pip;
     python3 -m pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
@@ -57,7 +52,7 @@ Will be found in folder Examples.
 
 ## General information
  
- CUDA® is a parallel computing platform and programming model developed by NVIDIA for general computing on graphical processing units (GPUs). With CUDA, developers are able to dramatically speed up computing applications by harnessing the power of GPUs.
+CUDA® is a parallel computing platform and programming model developed by NVIDIA for general computing on graphical processing units (GPUs). With CUDA, developers are able to dramatically speed up computing applications by harnessing the power of GPUs.
 
 PyTorch is an open-source machine learning library primarily used for deep learning and artificial intelligence (AI) applications. Developed by Facebook's AI Research lab (FAIR) and released in 2016, PyTorch has quickly become one of the most popular frameworks for building and training neural networks. 
 
