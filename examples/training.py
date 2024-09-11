@@ -1,5 +1,5 @@
 import torch
-from transformers import AdamW, AutoTokenizer, AutoModelForSequenceClassification
+from transformers import AdamW, AutoTokenizer, AutoModelForSequenceClassification, pipeline
 print('Start')
 # Same as before
 checkpoint = "bert-base-uncased"
@@ -18,6 +18,13 @@ optimizer = AdamW(model.parameters())
 loss = model(**batch).loss
 loss.backward()
 optimizer.step()
+
+device = 'cpu' # gpu or cuda
+
+print('unmask')
+# unmasker = pipeline('fill-mask', model=model, tokenizer=tokenizer,print('End'))
+unmasker = pipeline('fill-mask', model='bert-base-uncased', device='cuda')
+unmasker("Hello I'm a [MASK] model.")
 
 print('End')
 
