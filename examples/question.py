@@ -8,7 +8,8 @@ model_name = "NousResearch/Llama-2-7b-hf"
 model = AutoModelForCausalLM.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-pipe = pipeline(task="text-generation", model=model, tokenizer=tokenizer, max_new_tokens=64, do_sample=True, temperature=0.7, device='cpu')
+device = 'cpu' # gpu or cpu
+pipe = pipeline(task="text-generation", model=model, tokenizer=tokenizer, max_new_tokens=64, do_sample=True, temperature=0.7, device=device)
 
 question = "Question: What is the difference between a car and a truck?"
 answer = pipe(question)

@@ -18,21 +18,23 @@ which significantly speeds up deep learning computations.
 ## Activate the environment
 
     source .env/bin/activate
+
+In  Visual Studio Code.  Select Interpreter command from the Command Palette (Ctrl+Shift+P) and select 
+the python interpreter that belongs to the new virtual environment.   
  
 ## Install modules using PyTorch 
 
     python3 -m pip install --upgrade setuptools pip;
-    python3 -m pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+    python3 -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 ;
     python3 -m pip install nvidia-pyindex;
     python3 -m pip install --upgrade nvidia-tensorrt;
 
     pip3 install datasets;
     pip3 install evaluate;
-    pip3 install tf-keras
-
-    pip3 install transformers[torch]
-    pip3 install accelerate
     pip3 install tf-keras;
+
+    pip3 install transformers[torch];
+    pip3 install accelerate;
  
  ### Verify the installation of PyTorch
 
@@ -49,6 +51,11 @@ With the Linux command nvtop you can see the GPU status for NVIDIA GPUs.
 ## Examples
 
 Will be found in folder Examples.
+
+Exampel to run:
+
+    source .env/bin/activate;
+    python examples/torchtest.py 2>/dev/null
 
 ## General information
  
