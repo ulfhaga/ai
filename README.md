@@ -55,7 +55,8 @@ Will be found in folder Examples.
 Exampel to run:
 
     source .env/bin/activate;
-    python examples/torchtest.py 2>/dev/null
+    python examples/torchtest.py 2>/dev/null;
+    python examples/textgen.py  2>/dev/null;
 
 ## General information
  
