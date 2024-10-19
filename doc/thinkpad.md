@@ -1,12 +1,9 @@
 # INSTALLATION
 
-Computer Lenovo Thinkpad modell T460p.
+Computer Lenovo Thinkpad model T460p.
 GPU is NVIDIA GeForce 940MX
-
-    # Install Phyton
-    sudo apt-get install python3;
-    sudo apt-get install python-is-python3;
-    sudo apt-get install python3-libnvinfer-dev;
+During the installation of Ubuntu the drivers could be found.
+Try first with the verify commands.
 
     # List drivers
     sudo ubuntu-drivers list --gpgpu;
@@ -21,6 +18,10 @@ GPU is NVIDIA GeForce 940MX
     # NVIDIA cuDNN is a GPU-accelerated library of primitives for deep neural networks.
     sudo apt install cudnn;
 
-    # Verifiera
+    # Verify
     nvidia-detector
     nvidia-smi
+
+    # Monitor
+    sudo apt install nvtop;
+    nvtop;

@@ -11,6 +11,13 @@ PyTorch has built-in support for CUDA, NVIDIA's parallel computing platform,
 allowing for easy and efficient execution of tensor operations on GPUs, 
 which significantly speeds up deep learning computations.
 
+## Install Phyton
+
+    sudo apt-get install python3;
+    sudo apt-get install python-is-python3;
+    sudo apt-get install python3.10-venv;
+
+
 ## Create a new environment
  
     python3 -m venv .env;
