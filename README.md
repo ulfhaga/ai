@@ -1,4 +1,4 @@
- # Install Transformers on Ubuntu 22.04 with CUDA
+# Install Transformers on Ubuntu 22.04 with CUDA
 
 ## Prepare
 
@@ -16,7 +16,6 @@ which significantly speeds up deep learning computations.
     sudo apt-get install python3;
     sudo apt-get install python-is-python3;
     sudo apt-get install python3.10-venv;
-
 
 ## Create a new environment
  
@@ -57,13 +56,21 @@ With the Linux command nvtop you can see the GPU status for NVIDIA GPUs.
 
 ## Examples
 
-Will be found in folder Examples.
+Will be found in folder examples. They are based of examples from https://huggingface.co/.
 
-Exampel to run:
+
+Examples to run:
 
     source .env/bin/activate;
     python examples/torchtest.py 2>/dev/null;
     python examples/textgen.py  2>/dev/null;
+    python examples/text2gen.py  2>/dev/null;
+    python examples/processingdata.py 2>/dev/null;
+    python examples/training.py 2>/dev/null
+
+    
+
+
 
 ## General information
  

@@ -12,4 +12,8 @@ print('What is 42 ?')
 result = generator("question: What is 42 ? context: 42 is just a number")
 print(result[0]['generated_text'])
 
+print('What is 66 ?')
+result = generator("question: What is 42 ? context: Route 66 is a highway in USA")
+print(result[0]['generated_text'])
+
 
