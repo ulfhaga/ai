@@ -43,6 +43,5 @@ print(predictions.predictions.shape, predictions.label_ids.shape)
 preds = np.argmax(predictions.predictions, axis=-1)
 
 
-
 metric = evaluate.load("glue", "mrpc")
 metric.compute(predictions=preds, references=predictions.label_ids)
