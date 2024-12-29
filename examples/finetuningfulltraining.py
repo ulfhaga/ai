@@ -12,6 +12,10 @@ from transformers import get_scheduler
 
 import torch
 
+from tqdm.auto import tqdm
+
+import evaluate
+
 
 
 
@@ -85,3 +89,42 @@ print("Steps:",num_training_steps)
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 model.to(device)
 print("device",device);
+
+
+
+
+progress_bar = tqdm(range(num_training_steps))
+
+i = 0 
+model.train()
+for epoch in range(num_epochs):
+    for batch in train_dataloader:
+        batch = {k: v.to(device) for k, v in batch.items()}
+        outputs = model(**batch)
+        loss = outputs.loss
+        loss.backward()
+
+        optimizer.step()
+        lr_scheduler.step()
+        optimizer.zero_grad()
+        progress_bar.update(1)
+
+        i = i + 1
+#        if i > 10 : 
+#            break
+
+# The evaluation loop
+
+metric = evaluate.load("glue", "mrpc")
+model.eval()
+for batch in eval_dataloader:
+    batch = {k: v.to(device) for k, v in batch.items()}
+    with torch.no_grad():
+        outputs = model(**batch)
+
+    logits = outputs.logits
+    predictions = torch.argmax(logits, dim=-1)
+    metric.add_batch(predictions=predictions, references=batch["labels"])
+
+metric.compute()
+        
