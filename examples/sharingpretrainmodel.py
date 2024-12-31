@@ -20,6 +20,9 @@ checkpoint = "camembert-base"
 model = AutoModelForMaskedLM.from_pretrained(checkpoint)
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 
+# cd /tmp
+# git clone https://huggingface.co/lysandre/dummy
+# cd dummy
 model.save_pretrained("/tmp/dummy")
 tokenizer.save_pretrained("/tmp/dummy")
 

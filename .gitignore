@@ -1,2 +1,6 @@
 .env
 .vscode
+examples/SQuAD_it-test.json
+examples/SQuAD_it-train.json
+examples/*.tsv
+*.tsv

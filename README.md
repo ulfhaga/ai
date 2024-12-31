@@ -41,6 +41,8 @@ the python interpreter that belongs to the new virtual environment.
 
     pip3 install transformers[torch];
     pip3 install accelerate;
+
+    pip install -U "huggingface_hub[cli]"
  
  ### Verify the installation of PyTorch
 
