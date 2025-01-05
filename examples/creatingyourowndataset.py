@@ -9,9 +9,6 @@ from datasets import load_dataset
 
 url = "https://api.github.com/repos/huggingface/datasets/issues?page=1&per_page=1"
 
-GITHUB_TOKEN = "" 
-
-headers = {"Authorization": f"token {GITHUB_TOKEN}"}
 
 
 def fetch_issues(
