@@ -9,7 +9,7 @@ from datasets import load_dataset
 
 url = "https://api.github.com/repos/huggingface/datasets/issues?page=1&per_page=1"
 
-GITHUB_TOKEN = "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" 
+GITHUB_TOKEN = "" 
 
 headers = {"Authorization": f"token {GITHUB_TOKEN}"}
 
