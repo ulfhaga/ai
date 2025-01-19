@@ -191,6 +191,9 @@ args = TrainingArguments(
 
 from transformers import Trainer
 
+import wandb
+wandb.init(mode="disabled")
+
 trainer = Trainer(
     model=model,
     args=args,

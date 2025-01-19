@@ -45,9 +45,12 @@ the python interpreter that belongs to the new virtual environment.
     pip3 install psutil;
     pip3 install requests;
     pip3 install seqeval;
-    pip3 install wandb
+    pip3 install wandb;
+    pip3 install pdoc;
 
     pip3 install -U "huggingface_hub[cli]"
+
+    wandb offline;
 
 
  
